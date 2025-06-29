@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 enum layers {
     QWERTY,
+    CMK, // Colemak-DH
     NAV,
     MOUSE,
     BUTTON,
@@ -44,6 +45,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, HR3_LGU, HR3_LLA, HR3_LCT, HR3_LSH,    KC_G,                         KC_H, HR3_RSH, HR3_RCT, HR3_RLA, HR3_RGU, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, HR4_LBZ, HR4_LRA,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM, HR4_RRA, HR4_RBS, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+               LT(MEDIA,KC_ESC),   LT(NAV,KC_SPC), LT(MOUSE,KC_TAB),      LT(SYM,KC_ENT),  LT(NUM,KC_BSPC), LT(FUN,KC_DEL)
+                    //`--------------------------------------------'  `--------------------------------------------'
+  ),
+
+// Colemak DH
+// #define MIRYOKU_ALTERNATIVES_BASE_COLEMAKDH
+// KC_Q,              KC_W,              KC_F,              KC_P,              KC_B,              KC_J,              KC_L,              KC_U,              KC_Y,              KC_QUOT,
+// LGUI_T(KC_A),      LALT_T(KC_R),      LCTL_T(KC_S),      LSFT_T(KC_T),      KC_G,              KC_M,              LSFT_T(KC_N),      LCTL_T(KC_E),      LALT_T(KC_I),      LGUI_T(KC_O),
+// LT(U_BUTTON,KC_Z), ALGR_T(KC_X),      KC_C,              KC_D,              KC_V,              KC_K,              KC_H,              KC_COMM,           ALGR_T(KC_DOT),    LT(U_BUTTON,KC_SLSH),
+// U_NP,              U_NP,              LT(MEDIA,KC_ESC),LT(NAV,KC_SPC),  LT(MOUSE,KC_TAB),LT(SYM,KC_ENT),  LT(NUM,KC_BSPC), LT(FUN,KC_DEL),  U_NP,              U_NP
+
+    [CMK] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, CR3_LGU, CR3_LLA, CR3_LCT, CR3_LSH,    KC_G,                         KC_H, CR3_RSH, CR3_RCT, CR3_RLA, CR3_RGU, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, CR4_LBZ, CR4_LRA,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM, CR4_RRA, CR4_RBS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                LT(MEDIA,KC_ESC),   LT(NAV,KC_SPC), LT(MOUSE,KC_TAB),      LT(SYM,KC_ENT),  LT(NUM,KC_BSPC), LT(FUN,KC_DEL)
                     //`--------------------------------------------'  `--------------------------------------------'

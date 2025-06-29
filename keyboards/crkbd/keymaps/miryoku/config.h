@@ -48,6 +48,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define HR4_LRA ALGR_T(KC_X)
 #define HR4_RRA ALGR_T(KC_DOT)
 #define HR4_RBS LT(BUTTON,KC_SLSH)
+// CMK Colemak-DH
+// Row 3
+#define CR3_LGU LGUI_T(KC_A)
+#define CR3_LLA LALT_T(KC_R)
+#define CR3_LCT LCTL_T(KC_S)
+#define CR3_LSH LSFT_T(KC_T)
+#define CR3_RSH LSFT_T(KC_N)
+#define CR3_RCT LCTL_T(KC_E)
+#define CR3_RLA LALT_T(KC_I)
+#define CR3_RGU LGUI_T(KC_O)
+// Row 4
+#define CR4_LBZ LT(BUTTON,KC_Z)
+#define CR4_LRA ALGR_T(KC_X)
+#define CR4_RRA ALGR_T(KC_DOT)
+#define CR4_RBS LT(BUTTON,KC_SLSH)
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
